@@ -19,8 +19,8 @@ const works = [
   },
 
    {
-    image: "/images/projects/basketball-contents/cover.png",
-    title: "Basketball Contents",
+    image: "/images/projects/basketball-contents/ball-cover.png",
+    title: "Sports Media",
     category: "Sports",
     href: "/work/basketball-contents",
   },
