@@ -13,7 +13,6 @@ type HeroProps = {
   title: string;
   description: string;
   coverImage: string;
-  showButton?: boolean;
 };
 
 export default function Hero({
@@ -21,7 +20,6 @@ export default function Hero({
   title,
   description,
   coverImage,
-  showButton = true,
 }: HeroProps) {
   return (
     <Section size="lg">
@@ -41,14 +39,7 @@ export default function Hero({
               {description}
             </p>
 
-            {showButton && (
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button href="/work">
-                  View Case Studies
-                </Button>
-
-              </div>
-            )}
+            
           </div>
 
           {/* Right Image */}

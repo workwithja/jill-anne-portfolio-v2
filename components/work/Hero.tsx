@@ -1,30 +1,9 @@
 import Image, { type ImageProps } from "next/image";
-import Link from "next/link";
 
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import FadeIn from "@/components/ui/FadeIn";
 import Heading from "@/components/ui/Heading";
-
-function DownloadIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
-    </svg>
-  );
-}
 
 type HeroProps = {
   category: string;
@@ -60,15 +39,6 @@ export default function Hero({
               <p className="mt-8 max-w-2xl text-xl leading-9 text-neutral-600 dark:text-neutral-400">
                 {description}
               </p>
-
-              {/* CTA */}
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button href="/work">
-                  View Case Studies
-                </Button>
-
-              
-              </div>
 
               {metrics.length > 0 && (
                 <div className="mt-16 grid grid-cols-2 gap-8 border-t border-neutral-200 pt-10 dark:border-neutral-800 md:grid-cols-4">

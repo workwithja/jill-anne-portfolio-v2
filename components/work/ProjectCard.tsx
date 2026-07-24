@@ -21,10 +21,8 @@ export default function ProjectCard({
       <Link href={href}>
         <div className="overflow-hidden rounded-3xl border border-[color:var(--border)]">
           <div className="flex aspect-[16/10] items-center justify-center bg-[color:var(--surface)]">
-  <span className="text-[color:var(--muted)]">
-    {title}
-  </span>
-</div>
+            <span className="text-[color:var(--muted)]">{title}</span>
+          </div>
         </div>
 
         <div className="mt-6">
@@ -40,9 +38,12 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <span className="mt-6 inline-flex font-medium">
-            View Project →
-          </span>
+          <div className="mt-6">
+            <span className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition-all duration-300 group-hover:scale-105 group-hover:bg-neutral-800">
+              CLICK ME
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
         </div>
       </Link>
     </article>

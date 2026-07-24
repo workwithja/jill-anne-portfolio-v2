@@ -40,49 +40,54 @@ export default function SelectedWorks({
               typeof work.image === "string" ? work.image : undefined;
 
             const content = (
-  <article className="group">
-    <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-      {isVideo ? (
-  <video
-    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-  >
-    {videoSrc && <source src={videoSrc} type="video/mp4" />}
-    Your browser does not support the video tag.
-  </video>
-) : (
-  <Image
-    src={work.image}
-    alt={work.title}
-    fill
-    className="object-cover transition-transform duration-500 group-hover:scale-105"
-  />
-)}
-    </div>
+              <article className="group">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                  {isVideo ? (
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    >
+                      {videoSrc && <source src={videoSrc} type="video/mp4" />}
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <Image
+                      src={work.image}
+                      alt={work.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
+                </div>
 
-    <div className="mt-5">
-  <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-    {work.category}
-  </p>
+                <div className="mt-5">
+                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
+                    {work.category}
+                  </p>
 
-  <h3 className="mt-2 text-xl font-medium text-neutral-900 dark:text-neutral-100">
-    {work.title}
-  </h3>
-</div>
-  </article>
-);
+                  <h3 className="mt-2 text-xl font-medium text-neutral-900 dark:text-neutral-100">
+                    {work.title}
+                  </h3>
 
-return work.href ? (
-  <Link key={work.title} href={work.href} className="block">
-    {content}
-  </Link>
-) : (
-  <div key={work.title}>{content}</div>
-);
+                  <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 transition-all duration-300 group-hover:bg-black group-hover:text-white">
+                    CLICK TO EXPLORE
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </article>
+            );
+
+            return work.href ? (
+              <Link key={work.title} href={work.href} className="block">
+                {content}
+              </Link>
+            ) : (
+              <div key={work.title}>{content}</div>
+            );
           })}
         </div>
       </Container>
