@@ -1,3 +1,4 @@
+import StructuredData from "@/components/StructuredData";
 import Footer from "@/components/layout/Footer";
 import type { Metadata } from "next";
 import { Archivo_Black, IBM_Plex_Mono, Manrope } from "next/font/google";
@@ -91,7 +92,7 @@ verification: {
   authors: [
     {
       name: "Jill Anne Basit",
-      url: "https://yourdomain.com",
+      url: "https://jillanne-portfolio.vercel.app",
     },
   ],
 
@@ -99,43 +100,31 @@ verification: {
   publisher: "Jill Anne Basit",
 
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://jillanne-portfolio.vercel.app",
   },
 
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://yourdomain.com",
-    siteName: "Jill Anne Basit Portfolio",
+  type: "website",
+  locale: "en_US",
+  url: "https://jillanne-portfolio.vercel.app",
+  siteName: "Jill Anne Basit Portfolio",
 
-    title: "Jill Anne Basit | Social Media Manager",
+  title: "Jill Anne Basit | Freelance Social Media Manager & Graphic Designer",
 
-    description:
-      "Helping businesses grow through strategic social media management, content creation, and graphic design.",
+  description:
+    "Portfolio showcasing social media management, graphic design, branding, content strategy, and creative campaigns.",
 
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Jill Anne Basit Portfolio",
-      },
-    ],
-  },
+  images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Jill Anne Basit Portfolio",
+    },
+  ],
+},
 
-  twitter: {
-    card: "summary_large_image",
-
-    title: "Jill Anne Basit | Social Media Manager",
-
-    description:
-      "Helping businesses grow through strategic social media management, content creation, and graphic design.",
-
-    creator: "@yourusername",
-
-    images: ["/og-image.jpg"],
-  },
-
+  
   robots: {
     index: true,
     follow: true,
@@ -168,12 +157,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${archivoBlack.variable} ${manrope.variable} ${ibmPlexMono.variable} antialiased`}
-      >
-        {children}
-        <Footer />
-      </body>
+     <body
+  className={`${archivoBlack.variable} ${manrope.variable} ${ibmPlexMono.variable} antialiased`}
+>
+  <StructuredData />
+
+  {children}
+
+  <Footer />
+</body>
     </html>
   );
 }
