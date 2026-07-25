@@ -1,7 +1,7 @@
 "use client";
 import { useState, type JSX } from "react";
 import Image, { type ImageProps } from "next/image";
-
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -53,73 +53,63 @@ export default function SelectedWorks({
                 : undefined;
 
             return (
-              <button
-  key={work.title}
-  type="button"
-  className="group block w-full text-left"
-  onClick={() => {
-    setSelectedWork(index);
-    setSelectedImage(0);
-  }}
->
-  
-                <article>
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                    {isVideo ? (
-                      <video
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                      >
-                        {videoSrc && (
-                          <source
-                            src={videoSrc}
-                            type="video/mp4"
-                          />
-                        )}
-                      </video>
-                    ) : (
-                      <Image
-                        src={preview}
-                        alt={work.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    )}
-                  </div>
+  <article key={work.title} className="group">
+    <div
+      onClick={() => {
+        setSelectedWork(index);
+        setSelectedImage(0);
+      }}
+      className="relative aspect-[4/5] cursor-pointer overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl"
+    >
+      {isVideo ? (
+        <video
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          {videoSrc && <source src={videoSrc} type="video/mp4" />}
+        </video>
+      ) : (
+        <Image
+          src={preview}
+          alt={work.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      )}
+    </div>
 
-                  <div className="mt-5">
-                    <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-                      {work.category}
-                    </p>
+    <div className="mt-5">
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
+        {work.category}
+      </p>
 
-                    <h3 className="mt-2 text-xl font-medium text-neutral-900 dark:text-neutral-100">
-                      {work.title}
-                    </h3>
+      <h3 className="mt-2 text-xl font-medium text-neutral-900 dark:text-neutral-100">
+        {work.title}
+      </h3>
 
-                                  {showButton && (
-                      <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 transition-all duration-300 group-hover:bg-black group-hover:text-white">
-                        CLICK TO EXPLORE
-                        <span aria-hidden="true">→</span>
-                      </span>
-                    )}
-                  </div>
-                </article>
-              </button>
-
-            );
+      {showButton && (
+        <Link
+          href={work.href}
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 transition-all duration-300 hover:bg-black hover:text-white"
+        >
+          CLICK TO EXPLORE
+          <span aria-hidden="true">→</span>
+        </Link>
+      )}
+    </div>
+  </article>
+);
           })}
         </div>
         {selectedWork !== null && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-6">
     <button
-onClick={() => {
-  setSelectedWork(null);
-  setSelectedImage(0);
-}}      className="absolute right-6 top-6 text-4xl text-white hover:opacity-70"
+      onClick={() => setSelectedWork(null)}
+      className="absolute right-6 top-6 text-4xl text-white hover:opacity-70"
     >
       ×
     </button>
