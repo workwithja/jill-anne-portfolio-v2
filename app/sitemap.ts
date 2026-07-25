@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yourdomain.com";
+  const baseUrl = "https://jillanne-portfolio.vercel.app";
 
   return [
     {
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/work/educational-content`,
+      url: `${baseUrl}/work/educational-services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

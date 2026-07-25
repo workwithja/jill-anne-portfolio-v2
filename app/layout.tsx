@@ -21,8 +21,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
-
+  metadataBase: new URL("https://jillanne-portfolio.vercel.app"),
+verification: {
+    google: "--DSaw5uTl1aN1QEVHIhQZ5rVKIKQxf1P3INcfozdxw",
+  },
   title: {
     default: "Jill Anne Basit | Social Media Manager",
     template: "%s | Jill Anne Basit",
@@ -46,6 +48,44 @@ export const metadata: Metadata = {
     "Video Editor",
     "Freelancer",
     "Portfolio",
+    "Freelance Social Media Manager",
+    "Social Media Manager Philippines",
+    "Social Media Graphic Designer",
+    "Content Strategist",
+    "Social Media Content Creator",
+    "Social Media Marketing Portfolio",
+    "Graphic Design Portfolio",
+    "Freelance Graphic Designer Philippines",
+    "Social Media Branding",
+    "Content Marketing",
+    "Instagram Content Design",
+    "Facebook Content Design",
+    "LinkedIn Content Design",
+    "Canva Designer",
+    "Adobe Photoshop Designer",
+    "Visual Branding",
+    "Content Calendar",
+    "Digital Marketing",
+    "Medical Social Media Design",
+    "Healthcare Marketing",
+    "Medical Branding",
+    "Clinic Social Media",
+    "Educational Content Design",
+    "School Social Media",
+    "Education Marketing",
+    "Student Engagement",
+    "Sports Graphic Design",
+    "Basketball Social Media",
+    "Sports Marketing",
+    "Sports Content Creation",
+    "Canva",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Figma",
+    "Meta Business Suite",
+    "CapCut",
+    "ChatGPT",
+    "Notion"
   ],
 
   authors: [
