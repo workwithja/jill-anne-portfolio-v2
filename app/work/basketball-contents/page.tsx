@@ -26,7 +26,7 @@ export default function BasketballContentPage() {
       <Snapshot items={basketballContents.snapshot} />
 
       <FeaturedCampaign
-      works={[]} {...featuredCampaign}      />
+     {...featuredCampaign}      />
 
       <SelectedWorks
   works={basketballContents.selectedWorks.map((work) => ({
