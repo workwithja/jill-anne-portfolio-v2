@@ -81,48 +81,64 @@ showButton: false,
   {
     title: "Healthy Lifestyle Tips",
     category: "Eastchester Medical Associates, PC",
-    image: "/images/projects/medical-aesthetics/eastchester-1.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/eastchester-1.mp4",
+    ],
   },
   {
     title: "Wellness Awareness",
     category: "Eastchester Medical Associates, PC",
-    image: "/images/projects/medical-aesthetics/eastchester-2.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/eastchester-2.mp4",
+    ],
   },
 
   // Glow Medical Aesthetics
   {
     title: "Hydrafacial Treatment",
     category: "Glow Medical Aesthetics",
-    image: "/images/projects/medical-aesthetics/glow-1.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/glow-1.mp4",
+    ],
   },
   {
     title: "EMSCULPT NEO",
     category: "Glow Medical Aesthetics",
-    image: "/images/projects/medical-aesthetics/glow-2.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/glow-2.mp4",
+    ],
   },
 
   // RM Modern Aesthetics
   {
     title: "Strength Awareness",
     category: "RM Modern Aesthetics",
-    image: "/images/projects/medical-aesthetics/rm-1.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/rm-1.mp4",
+    ],
   },
   {
     title: "Workout Performance",
     category: "RM Modern Aesthetics",
-    image: "/images/projects/medical-aesthetics/rm-2.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/rm-2.mp4",
+    ],
   },
 
   // Vibrance 360
   {
     title: "Laser Removal Treatment",
     category: "Vibrance 360",
-    image: "/images/projects/medical-aesthetics/vibrance-1.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/vibrance-1.mp4",
+    ],
   },
   {
     title: "Skincare Concerns",
     category: "Vibrance 360",
-    image: "/images/projects/medical-aesthetics/vibrance-2.mp4",
+    images: [
+      "/images/projects/medical-aesthetics/vibrance-2.mp4",
+    ],
   },
 ],
 
