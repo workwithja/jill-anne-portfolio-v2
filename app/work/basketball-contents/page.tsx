@@ -31,11 +31,12 @@ export default function BasketballContentPage() {
       />
 
       <SelectedWorks
-        works={basketballContents.selectedWorks.map((work) => ({
-          ...work,
-          href: "#",
-        }))}
-      />
+  works={basketballContents.selectedWorks.map((work) => ({
+    ...work,
+    href: "#",
+  }))}
+  showButton={false}
+/>
 
       <Challenge introduction={""} challenges={[]} {...basketballContents.challenge} />
 

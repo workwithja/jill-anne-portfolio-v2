@@ -29,8 +29,12 @@ const works = [
 export default function WorkPage() {
   return (
     <Section size="lg">
+
       <Container>
-        <SelectedWorks works={works} />
+        <SelectedWorks
+  works={works}
+  showButton={true}
+/>
       </Container>
     </Section>
   );

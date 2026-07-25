@@ -14,10 +14,12 @@ type WorkItem = {
 
 type SelectedWorksProps = {
   works: WorkItem[];
+  showButton?: boolean;
 };
 
 export default function SelectedWorks({
   works,
+  showButton = true,
 }: SelectedWorksProps) {
   return (
     <Section size="lg">
@@ -73,9 +75,12 @@ export default function SelectedWorks({
                     {work.title}
                   </h3>
 
-                  <h3 className="mt-2 text-xl font-medium text-neutral-900 transition-colors duration-300 group-hover:text-neutral-600 dark:text-neutral-100">
-  
-</h3>
+                  {showButton && (
+  <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 transition-all duration-300 group-hover:bg-black group-hover:text-white">
+    CLICK TO EXPLORE
+    <span aria-hidden="true">→</span>
+  </span>
+)}
                 </div>
               </article>
             );

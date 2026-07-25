@@ -34,8 +34,9 @@ export default function EducationalServicesPage() {
             ...work,
             href: work.href ?? "#",
           }))}
-        />
-
+           showButton={false}
+/>
+  
         <Challenge
           introduction=""
           challenges={educationalServices.challenges}

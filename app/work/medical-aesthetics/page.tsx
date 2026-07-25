@@ -34,7 +34,8 @@ export default function MedicalAestheticsPage() {
             ...work,
             href: work.href ?? "#",
           }))}
-        />
+           showButton={false}
+/>       
 
         <Challenge {...medicalAesthetics.challenge} />
 
