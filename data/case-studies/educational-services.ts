@@ -123,6 +123,7 @@ const educationalServices = {
     {
       title: "POV: Your professor announced your first research project",
       category: "Student Relatable",
+      href: "",
       images:[
         "/images/projects/educational-services/81.png",
         "/images/projects/educational-services/82.png",
@@ -137,6 +138,7 @@ const educationalServices = {
     {
       title: "How We Organize Research Files Before Starting",
       category: "Behind the Process",
+      href: "",
       images: [
         "/images/projects/educational-services/91.png",
         "/images/projects/educational-services/92.png",
@@ -148,6 +150,7 @@ const educationalServices = {
     {
       title: "Why Students Trust Academic Commission by JA",
       category: "Testimonials",
+      href: "",
       images: [
         "/images/projects/educational-services/11.png",
         "/images/projects/educational-services/12.png",
@@ -161,6 +164,7 @@ const educationalServices = {
     {
       title: "Research Topic Consultation Services",
       category: "Promotions",
+      href: "",
       images: [
         "/images/projects/educational-services/01.png",
         "/images/projects/educational-services/02.png",
@@ -172,6 +176,7 @@ const educationalServices = {
     {
       title: "Sunday Reset Checklist Before Classes Start",
       category: "Student Survival",
+      href: "",
       images: [
         "/images/projects/educational-services/31.png",
         "/images/projects/educational-services/32.png",

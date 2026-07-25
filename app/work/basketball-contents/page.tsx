@@ -26,7 +26,9 @@ export default function BasketballContentPage() {
       <Snapshot items={basketballContents.snapshot} />
 
       <FeaturedCampaign
-     {...featuredCampaign}      />
+        {...featuredCampaign}
+        aspectRatio="landscape"
+      />
 
       <SelectedWorks
   works={basketballContents.selectedWorks.map((work) => ({

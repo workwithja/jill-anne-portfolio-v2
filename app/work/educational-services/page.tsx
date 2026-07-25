@@ -30,8 +30,11 @@ export default function EducationalServicesPage() {
         />
 
         <SelectedWorks
-  works={educationalServices.selectedWorks}
-  showButton={false}
+          works={educationalServices.selectedWorks.map((work: any) => ({
+            ...work,
+            href: work.href ?? "#",
+          }))}
+           showButton={false}
 />
   
         <Challenge
