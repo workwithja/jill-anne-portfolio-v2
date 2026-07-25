@@ -51,26 +51,50 @@ const educationalServices = {
   title: "5 Free Apps Every College Students Should Download",
 
   media: {
-    type: "image",
-    src: "/images/projects/educational-services/0.png",
+    type: "video",
+    src: "/images/projects/educational-services/0.mp4",
   },
 
   assets: [
     {
       title: "Main Visual",
-      image: "/images/projects/educational-services/campaign-creative.png",
+      images: [
+        "/images/projects/educational-services/campaign-creative.png",
+      ]
+      },
+    {
+      title: "Brand Guidelines",
+      images: [
+        "/images/projects/educational-services/brand.png",
+      ]
     },
     {
       title: "Caption Copy",
-      image: "/images/projects/educational-services/copywriting.png",
-    },
+      images: [
+        "/images/projects/educational-services/copywriting.png",
+        "/images/projects/educational-services/c1.png",
+        "/images/projects/educational-services/c2.png",
+        "/images/projects/educational-services/c3.png",
+      ]
+      },
     {
       title: "Content Planning",
-      image: "/images/projects/educational-services/content-calendar.png",
+      images: [
+        "/images/projects/educational-services/content-calendar.png",
+        "/images/projects/educational-services/cp1.png",
+      ],
     },
     {
       title: "Performance Insights",
-      image: "/images/projects/educational-services/analytics-insights.png",
+      images: [
+        "/images/projects/educational-services/analytics-insights.png",
+        "/images/projects/educational-services/p0.png",
+        "/images/projects/educational-services/p1.png",
+        "/images/projects/educational-services/p2.png",
+        "/images/projects/educational-services/p3.png",
+        "/images/projects/educational-services/p4.png",
+        "/images/projects/educational-services/p5.png",
+      ]
     },
   ],
 
@@ -99,27 +123,65 @@ const educationalServices = {
     {
       title: "POV: Your professor announced your first research project",
       category: "Student Relatable",
-      image: "/images/projects/educational-services/1.png",
+      images:[
+        "/images/projects/educational-services/81.png",
+        "/images/projects/educational-services/82.png",
+        "/images/projects/educational-services/83.png",
+        "/images/projects/educational-services/84.png",
+        "/images/projects/educational-services/85.png",
+        "/images/projects/educational-services/86.png",
+        "/images/projects/educational-services/87.png",
+        "/images/projects/educational-services/88.png",
+          ],
     },
     {
       title: "How We Organize Research Files Before Starting",
       category: "Behind the Process",
-      image: "/images/projects/educational-services/2.png",
+      images: [
+        "/images/projects/educational-services/91.png",
+        "/images/projects/educational-services/92.png",
+        "/images/projects/educational-services/93.png",
+        "/images/projects/educational-services/94.png",
+        "/images/projects/educational-services/95.png",
+      ],
     },
     {
       title: "Why Students Trust Academic Commission by JA",
       category: "Testimonials",
-      image: "/images/projects/educational-services/3.png",
+      images: [
+        "/images/projects/educational-services/11.png",
+        "/images/projects/educational-services/12.png",
+        "/images/projects/educational-services/13.png",
+        "/images/projects/educational-services/14.png",
+        "/images/projects/educational-services/15.png",
+        "/images/projects/educational-services/16.png",
+        "/images/projects/educational-services/17.png",
+      ],
     },
     {
       title: "Research Topic Consultation Services",
       category: "Promotions",
-      image: "/images/projects/educational-services/4.png",
+      images: [
+        "/images/projects/educational-services/01.png",
+        "/images/projects/educational-services/02.png",
+        "/images/projects/educational-services/03.png",
+        "/images/projects/educational-services/04.png",
+        "/images/projects/educational-services/05.png",
+      ],
     },
     {
       title: "Sunday Reset Checklist Before Classes Start",
       category: "Student Survival",
-      image: "/images/projects/educational-services/5.png",
+      images: [
+        "/images/projects/educational-services/31.png",
+        "/images/projects/educational-services/32.png",
+        "/images/projects/educational-services/33.png",
+        "/images/projects/educational-services/34.png",
+        "/images/projects/educational-services/35.png",
+        "/images/projects/educational-services/36.png",
+        "/images/projects/educational-services/37.png",
+        "/images/projects/educational-services/38.png",
+      ],
     },
   ],
   challenges: [

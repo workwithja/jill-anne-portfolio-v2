@@ -26,13 +26,13 @@ export default function BasketballContentPage() {
       <Snapshot items={basketballContents.snapshot} />
 
       <FeaturedCampaign
-        {...featuredCampaign}
-        aspectRatio="landscape"
-      />
+      works={[]} {...featuredCampaign}      />
 
       <SelectedWorks
   works={basketballContents.selectedWorks.map((work) => ({
     ...work,
+    // Some work items use a singular `image` field; `WorkItem` expects `images`.
+    images: (work as any).images ?? ((work as any).image ? [(work as any).image] : []),
     href: "#",
   }))}
   showButton={false}

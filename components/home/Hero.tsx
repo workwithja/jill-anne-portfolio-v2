@@ -24,9 +24,9 @@ export default function Hero({
   return (
     <Section size="lg">
       <Container>
-        <Grid>
+        <Grid className="items-center">
           {/* Left Content */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
             <Badge>{category}</Badge>
 
             <div className="mt-8">
@@ -43,8 +43,8 @@ export default function Hero({
           </div>
 
           {/* Right Image */}
-          <div className="col-span-12 lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-lg">
+          <div className="col-span-12 lg:col-span-5 flex justify-end">
+  <div className="relative h-[400px] w-full max-w-[420px] overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-lg">
               <Image
                 src={coverImage}
                 alt={title}

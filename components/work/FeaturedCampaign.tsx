@@ -1,3 +1,6 @@
+"use client";
+
+import { JSX, useState } from "react";
 import Image from "next/image";
 
 import Container from "@/components/ui/Container";
@@ -16,7 +19,7 @@ type FeaturedCampaignProps = {
 
   assets?: {
     title: string;
-    image: string;
+    images: string[];
   }[];
 
   aspectRatio?: "portrait" | "landscape";
@@ -38,7 +41,15 @@ export default function FeaturedCampaign({
   deliverables,
   role,
   outcome,
-}: FeaturedCampaignProps): import("react").JSX.Element {
+}: FeaturedCampaignProps): JSX.Element {
+  const [selectedAsset, setSelectedAsset] = useState<number | null>(null);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const selectedImage =
+    selectedAsset !== null
+      ? assets[selectedAsset]?.images[currentImage]
+      : null;
+
   if (!media) {
     return (
       <Section size="lg">
@@ -50,7 +61,7 @@ export default function FeaturedCampaign({
       </Section>
     );
   }
-console.log("Assets:", assets);
+
   return (
     <Section size="lg">
       <Container>
@@ -62,7 +73,6 @@ console.log("Assets:", assets);
           />
 
           <div className="mt-16 grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-            {/* Featured Campaign */}
             <div
               className={`relative mx-auto w-full overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-sm ${
                 aspectRatio === "landscape"
@@ -93,7 +103,6 @@ console.log("Assets:", assets);
               )}
             </div>
 
-            {/* Details */}
             <div className="space-y-10">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
@@ -153,44 +162,133 @@ console.log("Assets:", assets);
               </div>
             </div>
           </div>
-<div className="my-16 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
+
+          <div className="my-16 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
           {assets.length > 0 && (
-  <div className="mt-12">
-    <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
-      Behind the Campaign
-    </p>
+  <>
+    <div className="mt-12">
+      <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
+        Behind the Campaign
+      </p>
 
-    <p className="mb-8 max-w-2xl text-neutral-600 dark:text-neutral-400">
-      Explore the creative assets, copywriting, planning, and supporting materials that brought this campaign to life.
-    </p>
+      <p className="mb-8 max-w-2xl text-neutral-600 dark:text-neutral-400">
+        Explore the creative assets, copywriting, planning, and supporting
+        materials that brought this campaign to life.
+      </p>
 
-    <div className="grid gap-5 sm:grid-cols-2">
-      {assets.map((asset) => (
+   <div className="grid gap-5 sm:grid-cols-2">
+  {assets.map((asset, idx) => {
+    const images = asset.images ?? [];
+
+    if (images.length === 0) {
+      return (
         <div
           key={asset.title}
-          className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+          className="rounded-2xl border border-red-200 bg-red-50 p-6"
         >
-          <div className="relative aspect-[6/3] overflow-hidden">
-            <Image
-              src={asset.image}
-              alt={asset.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
+          <p className="font-semibold text-red-600">
+            {asset.title}
+          </p>
 
-          <div className="p-5">
-            <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-              {asset.title}
+          <p className="mt-2 text-sm text-red-500">
+            No images found.
+          </p>
+        </div>
+      );
+    }
+
+    return (
+      <button
+        key={asset.title}
+        type="button"
+        onClick={() => {
+          setSelectedAsset(idx);
+          setCurrentImage(0);
+        }}
+        className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+      >
+        <div className="relative aspect-[6/3] overflow-hidden">
+          <Image
+            src={images[0]}
+            alt={asset.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+            {asset.title}
+          </h3>
+
+          <p className="mt-1 text-sm text-neutral-500">
+            {images.length} image{images.length > 1 ? "s" : ""}
+          </p>
+        </div>
+      </button>
+    );
+  })}
+</div>
+</div>
+    {selectedAsset !== null && selectedImage && (
+      <div
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-6"
+        onClick={() => setSelectedAsset(null)}
+      >
+        <div
+          className="relative"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={() => setSelectedAsset(null)}
+            className="absolute -top-14 right-0 text-5xl font-light text-white hover:opacity-70"
+          >
+            ×
+          </button>
+
+          {currentImage > 0 && (
+            <button
+              onClick={() => setCurrentImage((prev) => prev - 1)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-4 py-2 text-3xl text-white"
+            >
+              ‹
+            </button>
+          )}
+
+          <Image
+            src={selectedImage}
+            alt={assets[selectedAsset].title}
+            width={1800}
+            height={1800}
+            className="max-h-[90vh] w-auto rounded-2xl object-contain"
+          />
+
+          {currentImage < assets[selectedAsset].images.length - 1 && (
+            <button
+              onClick={() => setCurrentImage((prev) => prev + 1)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/40 px-4 py-2 text-3xl text-white"
+            >
+              ›
+            </button>
+          )}
+
+          <div className="mt-4 text-center text-white">
+            <h3 className="text-lg font-semibold">
+              {assets[selectedAsset].title}
             </h3>
+
+            <p className="text-sm text-white/70">
+              {currentImage + 1} / {assets[selectedAsset].images.length}
+            </p>
           </div>
         </div>
-      ))}
-    </div>
-  </div>
+      </div>
+    )}
+  </>
 )}
-        </FadeIn>
-      </Container>
-    </Section>
-  );
+
+      </FadeIn>
+    </Container>
+  </Section>
+);
 }

@@ -5,21 +5,21 @@ import SelectedWorks from "@/components/work/SelectedWorks";
 
 const works = [
   {
-    image: "/images/projects/educational-services/educational-cover.png",
+    images: ["/images/projects/educational-services/educational-cover.png"],
     title: "Educational Services",
     category: "Education",
     href: "/work/educational-services",
   },
 
   {
-    image: "/images/projects/medical-aesthetics/medical-hero.png",
+    images: ["/images/projects/medical-aesthetics/medical-hero.png"],
     title: "Medical Aesthetics",
     category: "Healthcare",
     href: "/work/medical-aesthetics",
   },
 
-   {
-    image: "/images/projects/basketball-contents/ball-cover.png",
+  {
+    images: ["/images/projects/basketball-contents/ball-cover.png"],
     title: "Sports Media",
     category: "Sports",
     href: "/work/basketball-contents",

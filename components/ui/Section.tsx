@@ -8,9 +8,9 @@ function cn(...classes: Array<string | false | null | undefined>) {
 type SectionSize = "sm" | "md" | "lg";
 
 const spacing = {
-  sm: "py-16",
-  md: "py-24",
-  lg: "py-32",
+  sm: "py-10",
+  md: "py-14",
+  lg: "py-18",
 };
 
 type SectionProps = {

@@ -13,7 +13,7 @@ export default function HomePage() {
         <Hero
           category="Available for Freelance"
           title="Social Media Manager & Content Creator"
-          description="Helping businesses grow online through strategy, content creation, and organized social media management that turns ideas into measurable results."
+          description=""
           coverImage="/images/jill.png"
         />
 
