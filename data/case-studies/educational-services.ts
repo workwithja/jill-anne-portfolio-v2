@@ -51,8 +51,8 @@ const educationalServices = {
   title: "5 Free Apps Every College Students Should Download",
 
   media: {
-    type: "image",
-    src: "/images/projects/educational-services/brand.png",
+    type: "video",
+    src: "/images/projects/educational-services/0.mp4",
   },
 
   assets: [
