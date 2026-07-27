@@ -65,7 +65,7 @@ export default function FeaturedCampaign({
   return (
     <Section size="lg">
       <Container>
-        <FadeIn>
+        <>
           <SectionHeader
             label="Featured Campaign"
             title={title}
@@ -287,7 +287,7 @@ export default function FeaturedCampaign({
   </>
 )}
 
-      </FadeIn>
+      </>
     </Container>
   </Section>
 );
