@@ -1,8 +1,10 @@
-import CaseStudiesCTA from "@/components/home/CaseStudiesCTA";
 import Navigation from "@/components/layout/Navigation";
+
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
+import ProfessionalDevelopment from "@/components/home/ProfessionalDevelopment";
+import CaseStudiesCTA from "@/components/home/CaseStudiesCTA";
 
 export default function HomePage() {
   return (
@@ -20,6 +22,8 @@ export default function HomePage() {
         <About />
 
         <Services />
+
+        <ProfessionalDevelopment />
 
         <CaseStudiesCTA />
       </main>
